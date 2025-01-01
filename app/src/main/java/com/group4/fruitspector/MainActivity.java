@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             ModelUnquant model = ModelUnquant.newInstance(getApplicationContext());
 
             // Creates inputs for reference.
-            TensorBuffer inputFeature0 = TensorBuffer.createFixedSize(new int[]{1, 224, 224, 3}, DataType.FLOAT32);
+            TensorBuffer inputFeature0 = TensorBuffer.createFixedSize(new int[]{1, 1020, 1020, 3}, DataType.FLOAT32);
             ByteBuffer byteBuffer = ByteBuffer.allocateDirect(4*imageSize*imageSize*3);
             byteBuffer.order(ByteOrder.nativeOrder());
 
@@ -72,9 +72,9 @@ public class MainActivity extends AppCompatActivity {
             for(int i = 0; i < imageSize; i++){
                 for(int j = 0; j < imageSize; j++){
                     int val = intValues[pixel++]; // RGB
-                    byteBuffer.putFloat(((val >> 16) & 0xFF)*(1.f/255.f));
-                    byteBuffer.putFloat(((val >> 8) & 0xFF)*(1.f/255.f));
-                    byteBuffer.putFloat((val & 0xFF)*(1.f/255.f));
+                    byteBuffer.putFloat(((val >> 16) & 0xFF)*(1.f/1020.f));
+                    byteBuffer.putFloat(((val >> 8) & 0xFF)*(1.f/1020.f));
+                    byteBuffer.putFloat((val & 0xFF)*(1.f/1020.f));
                 }
             }
 

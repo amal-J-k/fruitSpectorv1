@@ -10,14 +10,12 @@
     <Button
         android:id="@+id/button"
         android:layout_width="120dp"
-        android:layout_height="120dp"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
         android:text="Take Picture"
         android:textAllCaps="false"
         android:textSize="21sp"
         android:textStyle="bold"
-        android:backgroundTint="@color/black"
         android:textColor="@color/white"
         android:paddingBottom="10dp"
         />
